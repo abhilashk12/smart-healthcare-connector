@@ -17,7 +17,7 @@ Frontend
 - RxJS
 
 AI
-- OpenAI/Gemini
+- OpenAI/Gemini/Ollama
 
 Documentation
 - Swagger

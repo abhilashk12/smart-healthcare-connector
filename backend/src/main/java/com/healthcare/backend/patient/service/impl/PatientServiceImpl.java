@@ -18,6 +18,10 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Patient createPatient(PatientRequest request) {
 
+        if (patientRepository.existsByInsuranceNumber(request.getInsuranceNumber())) {
+            throw new RuntimeException("Insurance number already exists");
+        }
+
         Patient patient = new Patient();
 
         patient.setFirstName(request.getFirstName());

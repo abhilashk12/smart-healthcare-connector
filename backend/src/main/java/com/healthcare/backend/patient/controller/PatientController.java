@@ -3,6 +3,7 @@ package com.healthcare.backend.patient.controller;
 import com.healthcare.backend.patient.dto.PatientRequest;
 import com.healthcare.backend.patient.entity.Patient;
 import com.healthcare.backend.patient.service.PatientService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ public class PatientController {
     private final PatientService patientService;
 
     @PostMapping
-    public Patient createPatient(@RequestBody PatientRequest request) {
+    public Patient createPatient(@Valid @RequestBody PatientRequest request) {
         return patientService.createPatient(request);
     }
 

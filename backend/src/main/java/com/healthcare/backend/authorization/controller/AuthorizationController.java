@@ -40,4 +40,11 @@ public class AuthorizationController {
     public void delete(@PathVariable Long id) {
         authorizationService.deleteRequest(id);
     }
+
+    @PostMapping("/{id}/submit")
+    public AuthorizationRequest submit(@PathVariable Long id) {
+
+        return authorizationService.submit(id);
+
+    }
 }

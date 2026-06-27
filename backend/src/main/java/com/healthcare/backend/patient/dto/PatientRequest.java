@@ -26,6 +26,6 @@ public class PatientRequest {
 
     private String phoneNumber;
 
-    @Email
+//    @Email
     private String email;
 }

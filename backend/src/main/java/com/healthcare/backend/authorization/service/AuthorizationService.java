@@ -17,4 +17,5 @@ public interface AuthorizationService {
 
     void deleteRequest(Long id);
 
+    AuthorizationRequest submit(Long id);
 }

@@ -83,4 +83,17 @@ public class AuthorizationServiceImpl implements AuthorizationService {
     public void deleteRequest(Long id) {
         authorizationRepository.deleteById(id);
     }
+
+    @Override
+    public AuthorizationRequest submit(Long id) {
+
+        AuthorizationRequest request =
+                authorizationRepository.findById(id)
+                        .orElseThrow();
+
+        request.setStatus(RequestStatus.SUBMITTED);
+
+        return authorizationRepository.save(request);
+
+    }
 }

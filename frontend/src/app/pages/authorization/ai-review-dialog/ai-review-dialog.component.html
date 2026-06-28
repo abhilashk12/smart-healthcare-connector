@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>
+    🤖 AI Copilot Review
+</h2>
+
+<mat-dialog-content>
+
+    <div *ngIf="loading" class="loader">
+
+        <mat-spinner diameter="50"></mat-spinner>
+
+        <p>AI is reviewing your authorization request...</p>
+
+    </div>
+
+    <div *ngIf="!loading && review">
+
+        <h3>Summary</h3>
+
+        <p>{{review.summary}}</p>
+
+        <h3>Confidence</h3>
+
+        <p>{{review.confidence}}%</p>
+
+        <h3>Overall Status</h3>
+
+        <p>{{review.overallStatus}}</p>
+
+        <h3>Suggestions</h3>
+
+        <ul>
+
+            <li *ngFor="let suggestion of review.suggestions">
+                {{suggestion}}
+            </li>
+
+        </ul>
+
+    </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+    <button
+        mat-raised-button
+        color="primary"
+        mat-dialog-close>
+
+        Close
+
+    </button>
+
+</mat-dialog-actions>
